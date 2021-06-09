@@ -1,4 +1,11 @@
+#ifndef NeurenalNetworkNN1
+#define NeurenalNetworkNN1
+
 #include "Perceptron.h"
+#include "Fonction_activation.h"
+#include "Input.h"
+#include <vector>
+
 
 class NN1{
     public:
@@ -9,3 +16,5 @@ class NN1{
     private:
         std::vector<Perceptron> network;
 };
+
+#endif

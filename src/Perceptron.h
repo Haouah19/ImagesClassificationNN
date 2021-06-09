@@ -1,3 +1,6 @@
+#ifndef NeurenalNetworkPerceptron
+#define NeurenalNetworkPerceptron
+
 #include "Fonction_activation.h"
 #include "Input.h"
 #include <vector>
@@ -19,3 +22,5 @@ class Perceptron {
 
 
 };
+
+#endif

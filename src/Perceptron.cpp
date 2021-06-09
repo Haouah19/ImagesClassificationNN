@@ -1,8 +1,7 @@
-
 #include <iostream>
 #include <fstream>
 
-#include "perceptron.h"
+#include "Perceptron.h"
 using namespace std; 
 
 Perceptron::Perceptron(int inputSize, Fonction_activation* functionActivation, char label){

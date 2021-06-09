@@ -2,8 +2,6 @@
 #include <math.h>
 #include "Tanh.h"
 
-Tanh::Tanh(){}
-
 double Tanh::operator()(double x) {
     return (exp(x) - exp(-x))/(exp(x)+exp (-x));
 }
