@@ -22,22 +22,14 @@ Iris::Iris(int i){
     } else cout << "Unable to open file"; 
 }
 
-void Input::set_label(char i) {
-    Label = i;
-}
-
-char Input::get_label(){
-    return Label;
-}
-
 double Iris::operator[](int i){
     return m_description[i];
 }
 
-int main(int argc, char *argv[])
-{
-    Iris test = Iris(2);
-    cout << test[1] <<'\n';
-    cout << test.get_label() << '\n';
-    return 0;
+void Iris::set_label(char i) {
+    Label = i;
+}
+
+char Iris::get_label(){
+    return Iris::Label;
 }

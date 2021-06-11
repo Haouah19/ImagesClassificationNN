@@ -20,7 +20,7 @@ double Perceptron::get_poids(int i){
     return Perceptron::weights[i];
 }
 
-double Perceptron::forward(Input & input){ 
+double Perceptron::forward(Input &input){ 
     double sum = 0;
     for(int i = 1; i<=weights.size(); i++){ // à vérifier 
         sum = sum + (get_poids(i) * input[i]);
@@ -28,7 +28,7 @@ double Perceptron::forward(Input & input){
     return functionActivation->operator ()(sum+get_poids(0));
 }
 
-void Perceptron::calcul_delta(Input & input){
+void Perceptron::calcul_delta(Input &input){
     double sum = 0;
     for(int i = 1; i<=weights.size(); i++){ // à vérifier 
         sum = sum + (get_poids(i) * input[i]);
@@ -41,9 +41,9 @@ double Perceptron::get_delta(){
     return delta;
 }
 
-void Perceptron::backprop(Input & input, double rate){
+void Perceptron::backprop(Input &input, double rate){
     Perceptron::weights[0] = get_poids(0) - rate * Perceptron::get_delta();
-    for(int i=0; i<weights.size(); i++) get_poids(i+1) - rate * input.operator[](i) * get_delta();
+    for(int i=0; i<weights.size(); i++) (get_poids(i+1) - rate * input.operator[](i) * get_delta());
 }
 
 char Perceptron::get_label(){

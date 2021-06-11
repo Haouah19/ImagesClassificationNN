@@ -13,6 +13,5 @@ template<class inputType, int nbInputMax> class Apprentissage {
         void apprendre_base(int, double);
         int evaluer(); 
 };
-
 #endif
 

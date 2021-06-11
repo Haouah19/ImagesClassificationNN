@@ -6,7 +6,8 @@ template<class inputType, int nbInputMax> Apprentissage<inputType,nbInputMax>::A
 
 template<class inputType, int nbInputMax> void Apprentissage<inputType,nbInputMax>::apprendre_base(int Nbiterations, double rate){
     for(int i = 0; i <Nbiterations ; i++){
-        int randIndex = (rand() % nbInputMax);
+        //int randIndex = (rand() % nbInputMax);
+        int randIndex = 1;
         inputType input(randIndex);
         network->apprentissage(input, rate);
     }
@@ -17,9 +18,8 @@ template<class inputType, int nbInputMax> int Apprentissage<inputType,nbInputMax
     for (int i = 0; i < nbInputMax; i++) {
         inputType input(i);
         char label = input.get_label();
-        if(n->evaluation(input)==label){
+        if(network->evaluation(input)==label){
             cptMatched++;
-
         }
     }
     return cptMatched;

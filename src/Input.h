@@ -6,7 +6,7 @@ class Input{
         char Label;
     public:
         virtual double operator[](int)=0;
-        char get_label();
+        virtual char get_label()=0;
         void set_label(char);
 };
 
