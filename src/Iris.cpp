@@ -1,11 +1,10 @@
 #include "Iris.h"
 #include <fstream>
 #include <iostream>
-using namespace std; 
 
 Iris::Iris(int i){
-    string data;
-    ifstream file ("../data/iris_training/iris"+to_string(i));
+    std::string data;
+    std::ifstream file ("../data/iris_training/iris"+ std::to_string(i));
     int index = 0;
     if (file.is_open()){
         while ( getline (file, data, ',') ){
@@ -19,7 +18,7 @@ Iris::Iris(int i){
             }   
         }
         file.close();
-    } else cout << "Unable to open file"; 
+    } else std::cout << "Unable to open file"; 
 }
 
 double Iris::operator[](int i){

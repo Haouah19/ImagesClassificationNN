@@ -1,15 +1,14 @@
 #include "Image.h"
 #include <fstream>
 #include <iostream>
-using namespace std;
 
 Image::Image(int i){
     char pixelValue;
     int data;
     char pipe[784];
 
-    ifstream labels("../data/MNIST_training/train-labels.idx1-ubyte",
-               ios::in | ios::binary);
+    std::ifstream labels("../data/MNIST_training/train-labels.idx1-ubyte",
+               std::ios::in | std::ios::binary);
 
     if (labels.is_open()){
         labels.seekg(8 + i, labels.cur);
@@ -17,12 +16,12 @@ Image::Image(int i){
         data = (int) pixelValue;
         labels.close();
 
-    } else cout << "Unable to open file" << '\n';
+    } else std::cout << "Unable to open file" << '\n';
 
     set_label(char(pixelValue));
 
-    ifstream caracteristics("../data/MNIST_training/training" + to_string(i),
-    ios::in | ios::binary);
+    std::ifstream caracteristics("../data/MNIST_training/training" + std::to_string(i),
+    std::ios::in | std::ios::binary);
 
     if (caracteristics.is_open()) {
         caracteristics.seekg(1078, caracteristics.cur);
@@ -32,7 +31,7 @@ Image::Image(int i){
         }
         caracteristics.close();
 
-    } else cout << "Unable to open file" << '\n';
+    } else std::cout << "Unable to open file" << '\n';
 
 }
 

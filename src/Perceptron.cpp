@@ -2,7 +2,6 @@
 #include <fstream>
 
 #include "Perceptron.h"
-using namespace std; 
 
 Perceptron::Perceptron(int inputSize, Fonction_activation* functionActivation, char label){
     Perceptron::functionActivation = functionActivation;
@@ -42,8 +41,10 @@ double Perceptron::get_delta(){
 }
 
 void Perceptron::backprop(Input &input, double rate){
-    Perceptron::weights[0] = get_poids(0) - rate * Perceptron::get_delta();
-    for(int i=0; i<weights.size(); i++) (get_poids(i+1) - rate * input.operator[](i) * get_delta());
+    Perceptron::weights[0] = Perceptron::weights[0] - rate * Perceptron::get_delta();
+    for(int i=0; i<weights.size(); i++){
+        Perceptron::weights[i+1] = get_poids(i+1) - (rate * input.operator[](i) * Perceptron::get_delta());
+    }
 }
 
 char Perceptron::get_label(){
