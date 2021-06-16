@@ -2,7 +2,7 @@
 Include_Path = /Users/adonis/Documents/M2/S2/C++/NeurenalNetwork/src/
 #INCLUDES = -I $(ProjectHOME)include
 INCLUDES = -I ${Include_Path}
-EXECUTABLES = Iris.o Image.o Sigmoide.o Tanh.o Perceptron.o NN1.o Perceptron_cachee.o Input_intermediaire.o
+EXECUTABLES = Iris.o Image.o Sigmoide.o Tanh.o Perceptron.o NN1.o Perceptron_cachee.o Input_intermediaire.o NN2.o
 CC = g++
 
 all: LaunchNN
@@ -45,11 +45,11 @@ Perceptron_cachee.o : Perceptron_cachee.cpp ${Include_Path}/Perceptron_cachee.h 
 NN1.o : NN1.cpp ${Include_Path}/NN1.h
 	${CC} -c NN1.cpp ${INCLUDES}
 
-#Apprentissage.o : Apprentissage.cpp ${Include_Path}/Apprentissage.h
-#	${CC} -c Apprentissage.cpp ${INCLUDES}
+NN2.o : NN2.cpp ${Include_Path}/NN2.h
+	${CC} -c NN2.cpp ${INCLUDES}
 
 ## Main
-Main.o : Main.cpp ${Include_Path}/Iris.h ${Include_Path}/Image.h ${Include_Path}/Apprentissage.h
+Main.o : Main.cpp ${Include_Path}/Iris.h ${Include_Path}/Image.h ${Include_Path}/Apprentissage.h ${Include_Path}/ApprentissageHiddenLayer.h
 	${CC} -c Main.cpp ${INCLUDES}
 
 clean:
