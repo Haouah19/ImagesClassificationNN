@@ -15,8 +15,7 @@ template<class inputType, int nbInputMax> class Apprentissage {
         
         void apprendre_base(int Nbiterations, double rate){
             for(int i = 0; i <Nbiterations ; i++){
-                //int randIndex = (rand() % nbInputMax);
-                int randIndex = 1;
+                int randIndex = (rand() % nbInputMax);
                 inputType input(randIndex);
                 network->apprentissage(input, rate);
             }

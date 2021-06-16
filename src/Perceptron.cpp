@@ -41,6 +41,7 @@ double Perceptron::get_delta(){
 }
 
 void Perceptron::backprop(Input &input, double rate){
+    Perceptron::calcul_delta(input);
     Perceptron::weights[0] = Perceptron::weights[0] - rate * Perceptron::get_delta();
     for(int i=0; i<weights.size(); i++){
         Perceptron::weights[i+1] = get_poids(i+1) - (rate * input.operator[](i) * Perceptron::get_delta());
