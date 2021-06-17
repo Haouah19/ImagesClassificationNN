@@ -1,5 +1,4 @@
 #include "NN1.h"
-#include <iostream>
 
 NN1::NN1(int InputSize , int NbPerceptron, Fonction_activation *functionActivation){
     for(int i=0; i< NbPerceptron; i++){

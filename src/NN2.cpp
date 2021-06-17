@@ -3,7 +3,6 @@
 #include <vector>
 
 NN2::NN2(int InputSize , int nbLabels, int nbPerceptronsCachee, Fonction_activation *functionActivation) {
-    srand(time(NULL)); 
     for (int i = 0; i < nbLabels; i++){
         coucheSortie.push_back(new Perceptron(InputSize, functionActivation, '0' + i));
     }

@@ -19,9 +19,7 @@ public:
 
     int evaluer(){
         int cptMatched = 0;
-        for (int i; i < nbInputMax; i++){
-            std::pair<std::vector<double>, char> formated_input;
-            
+        for (int i=0; i < nbInputMax; i++){            
             inputType input(i);
             char label = input.get_label();
             if (label == network->evaluation(input))

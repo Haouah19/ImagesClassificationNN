@@ -15,10 +15,12 @@ Image::Image(int i){
         labels.read((char*) &pixelValue, sizeof(char));
         data = (int) pixelValue;
         labels.close();
+    } else {
+        std::cout << "Unable to open file" << '\n';
+    }
 
-    } else std::cout << "Unable to open file" << '\n';
-
-    set_label(char(pixelValue));
+    char label = '0'+ data;
+    set_label(label);
 
     std::ifstream caracteristics("../data/MNIST_training/training" + std::to_string(i),
     std::ios::in | std::ios::binary);
@@ -31,7 +33,9 @@ Image::Image(int i){
         }
         caracteristics.close();
 
-    } else std::cout << "Unable to open file" << '\n';
+    } else {
+        std::cout << "Unable to open file" << '\n';
+    }
 
 }
 

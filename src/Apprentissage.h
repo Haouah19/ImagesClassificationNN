@@ -2,6 +2,7 @@
 #define NeurenalNetworkApprentissage
 
 #include "NN1.h"
+#include <iostream>
 
 
 template<class inputType, int nbInputMax> class Apprentissage {

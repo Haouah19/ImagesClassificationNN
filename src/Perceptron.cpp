@@ -21,16 +21,16 @@ double Perceptron::get_poids(int i){
 
 double Perceptron::forward(Input &input){ 
     double sum = 0;
-    for(int i = 1; i<=weights.size(); i++){ // à vérifier 
-        sum = sum + (get_poids(i) * input[i]);
+    for(int i = 0; i<=weights.size(); i++){ // à vérifier 
+        sum = sum + (get_poids(i+1) * input[i]);
     }
     return functionActivation->operator ()(sum+get_poids(0));
 }
 
 void Perceptron::calcul_delta(Input &input){
     double sum = 0;
-    for(int i = 1; i<=weights.size(); i++){ // à vérifier 
-        sum = sum + (get_poids(i) * input[i]);
+    for(int i = 0; i<weights.size(); i++){ // à vérifier 
+        sum = sum + (get_poids(i+1) * input[i]);
     }
     double labelClass = (input.get_label() == label) ? 1 : 0 ;
     Perceptron::delta = functionActivation->prim(get_poids(0) + sum) * (forward(input) - labelClass);
