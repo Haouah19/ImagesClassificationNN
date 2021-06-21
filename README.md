@@ -4,12 +4,14 @@
 ### Compilation & Exécution
 Se placer dans le répertoire /src :
 ```
+- cd NeurenalNetwork/src
 - make
 - ./LaunchNN 
 ```
 
 ### Main
-- [x] Création des inputs
-- [X] Création du network (Fonction d'activation, perceptron, ...)
-- [ ] Création d'une instance de la classe Apprentissage pour entrainer, puis évaluer. (Erreur de compilation à cause des patrons de classe dans le .cpp, il faut les copier dans le .h)
-- [ ] Tests de cohérence des résultats
+- [x] Perceptron multicouche sans couche cachée
+  - Iris : une moyenne de 100/150 
+  - Image : une moyenne de 10000/60000
+- [ ] Perceptron multicouche avec couche cachée
+  - ne se lance pas correctement, segfault quand le nombre de perceptrons de la couche de sortie est égal à celui de la couche cachée. 
