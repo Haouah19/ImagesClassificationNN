@@ -10,8 +10,6 @@ all: LaunchNN
 LaunchNN : Main.o ${EXECUTABLES}
 	${CC} -Wall ${INCLUDES} -o LaunchNN Main.o ${EXECUTABLES}
 
-
-## Inputs
 Input.o : ${Include_Path}/input.h
 
 Iris.o : Iris.cpp ${Include_Path}/Iris.h Input.o
@@ -23,9 +21,6 @@ Image.o : Image.cpp ${Include_Path}/Image.h Input.o
 Input_intermediaire.o : Input_intermediaire.cpp ${Include_Path}/Input_intermediaire.h Input.o 
 	${CC} -c Input_intermediaire.cpp ${INCLUDES} 
 
-
-
-## Fonctions activation
 Fonction_activation.o : ${Include_Path}/Fonction_activation.h
 
 Sigmoide.o : Sigmoide.cpp ${Include_Path}/Sigmoide.h Fonction_activation.o
@@ -34,8 +29,6 @@ Sigmoide.o : Sigmoide.cpp ${Include_Path}/Sigmoide.h Fonction_activation.o
 Tanh.o : Tanh.cpp ${Include_Path}/Tanh.h Fonction_activation.o
 	${CC} -c Tanh.cpp ${INCLUDES} 
 
-
-## Neural Network
 Perceptron.o : Perceptron.cpp ${Include_Path}/Perceptron.h
 	${CC} -c Perceptron.cpp ${INCLUDES} 
 
@@ -48,7 +41,6 @@ NN1.o : NN1.cpp ${Include_Path}/NN1.h
 NN2.o : NN2.cpp ${Include_Path}/NN2.h
 	${CC} -c NN2.cpp ${INCLUDES}
 
-## Main
 Main.o : Main.cpp ${Include_Path}/Iris.h ${Include_Path}/Image.h ${Include_Path}/Apprentissage.h ${Include_Path}/ApprentissageHiddenLayer.h
 	${CC} -c Main.cpp ${INCLUDES}
 
