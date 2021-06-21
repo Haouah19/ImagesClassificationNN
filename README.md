@@ -15,3 +15,6 @@ Se placer dans le répertoire /src :
   - Image : une moyenne de 10000/60000
 - [ ] Perceptron multicouche avec couche cachée
   - ne se lance pas correctement, segfault quand le nombre de perceptrons de la couche de sortie est égal à celui de la couche cachée. 
+
+### Results exemple :
+![alt text](https://github.com/haouah19/NeurenalNetwork/blob/main/Resutls.png?raw=true)
